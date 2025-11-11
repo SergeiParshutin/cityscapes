@@ -11,3 +11,11 @@ CITYSCAPES_TRAINID_COLORS = [
     ( 70,130,180), (220, 20, 60), (255,  0,  0), (  0,  0,142), (  0,  0, 70),
     (  0, 60,100), (  0, 80,100), (  0,  0,230), (119, 11, 32)
 ]
+
+def get_device():
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    # MPS ir pieejams no macOS 12.3+, PyTorch 1.12+
+    if torch.backends.mps.is_built() and torch.backends.mps.is_available():
+        return torch.device("mps")
+    return torch.device("cpu")

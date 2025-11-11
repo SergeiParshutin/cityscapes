@@ -37,7 +37,7 @@ data/
 ```bash
 pip install -r requirements.txt
 python scripts/train.py --config configs/config.yaml
-python scripts/eval.py --weights runs/ckpt.pt --data-root data --img-size 512
+python scripts/eval.py --weights runs/ckpt.pt --data-root data --img_size_h 96 --img_size_w 256
 ```
 
 ## Streamlit demo

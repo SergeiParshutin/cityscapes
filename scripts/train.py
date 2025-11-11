@@ -2,7 +2,7 @@ import argparse, yaml, torch, torch.nn as nn
 from torch.optim import AdamW
 import segmentation_models_pytorch as smp
 from src.dataset import build_loaders
-from src.utils import save_ckpt
+from src.utils import save_ckpt, get_device
 import numpy as np
 
 def miou_from_confmat(cm):
@@ -29,8 +29,8 @@ def main():
     ignore_index = int(cfg.get("ignore_index", 255))
     num_classes = int(cfg.get("num_classes", 19))
 
-    dl_tr, dl_va = build_loaders(cfg["data_root"], cfg["img_size"], cfg["batch_size"])
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    dl_tr, dl_va = build_loaders(cfg["data_root"], cfg["img_size_h"], cfg['img_size_w'], cfg["batch_size"])
+    device = get_device()
     model_class = getattr(smp, cfg.get("arch","Unet"))
     model = model_class(encoder_name=cfg["encoder_name"], encoder_weights=cfg["encoder_weights"],
                         classes=num_classes, activation=None).to(device)
