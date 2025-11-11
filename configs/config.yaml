@@ -1,0 +1,12 @@
+encoder_name: resnet34
+encoder_weights: imagenet
+arch: Unet
+img_size: 512
+batch_size: 4
+epochs: 60
+lr: 3e-4
+weight_decay: 1e-4
+data_root: ./data
+out_dir: ./runs
+ignore_index: 255
+num_classes: 19
