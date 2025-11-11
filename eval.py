@@ -1,4 +1,5 @@
 # Satur funkcijas modeļa novērtēšanai
+# Daļēji dublējas ar train.py
 
 # Importējam bibliotēkas
 import argparse, torch, numpy as np
