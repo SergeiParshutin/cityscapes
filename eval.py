@@ -1,3 +1,6 @@
+# Satur funkcijas modeļa novērtēšanai
+
+# Importējam bibliotēkas
 import argparse, torch, numpy as np
 import segmentation_models_pytorch as smp
 from src.dataset import build_loaders

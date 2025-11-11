@@ -1,7 +1,9 @@
+# Datu ielādēšanas palīgfunkcijas
+# Importējam bibliotēkas
 from pathlib import Path
 import cv2, numpy as np, torch
 from torch.utils.data import Dataset, DataLoader
-import albumentations as A
+import albumentations as A          # Bibliotēka ar standartizētām datu pieaudzināšanas (augmentation) funkcijām
 from albumentations.pytorch import ToTensorV2
 
 class CityscapesDataset(Dataset):
