@@ -1,13 +1,13 @@
-encoder_name: resnet34
-encoder_weights: imagenet
-arch: Unet
-img_size_h: 96
-img_size_w: 256
-batch_size: 4
-epochs: 60
-lr: 3e-4
-weight_decay: 1e-4
-data_root: ./data
-out_dir: ./runs
-ignore_index: 255
-num_classes: 19
+encoder_name: resnet34        # Tīkla nosaukums
+encoder_weights: imagenet     # Tīkla sākotnējie svāri
+arch: Unet                    # Tīkla arhitektūra - Unet
+img_size_h: 96                # Attēla noklusējuma augstums pikseļos
+img_size_w: 256               # Attēla noklusējuma platums pikseļos
+batch_size: 4                 # Batch izmērs
+epochs: 60                    # Noklusējuma epohas
+lr: 3e-4                      # Sākotnējais apmācības koeficients
+weight_decay: 1e-4            # Svaru regularizācijas parametrs optimizatoram AdamW
+data_root: ./data             # Pamata mape ar datiem
+out_dir: ./runs               # Pamata mape, kur tiks saglabāti modeļi
+ignore_index: 255             # Pikseļi, kurus nedrīkst iekļaut loss funkcijas aprēķinā, datu kopā ir marķēti ar vērtību 255
+num_classes: 19               # Klašu skaits - datu kopas noklusējuma parametrs
