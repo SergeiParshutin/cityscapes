@@ -4,7 +4,7 @@ arch: Unet                    # Tīkla arhitektūra - Unet
 img_size_h: 96                # Attēla noklusējuma augstums pikseļos
 img_size_w: 256               # Attēla noklusējuma platums pikseļos
 batch_size: 4                 # Batch izmērs
-epochs: 60                    # Noklusējuma epohas
+epochs: 10                    # Noklusējuma epohas
 lr: 3e-4                      # Sākotnējais apmācības koeficients
 weight_decay: 1e-4            # Svaru regularizācijas parametrs optimizatoram AdamW
 data_root: ./data             # Pamata mape ar datiem
